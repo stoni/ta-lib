@@ -1,5 +1,5 @@
 /*
- Copyright (C) 1998, 1999, 2001, 2002 Jérôme Lecomte
+ Copyright (C) 1998, 1999, 2001, 2002 Jï¿½rï¿½me Lecomte
  
  This file is part of XLW, a free-software/open-source C++ wrapper of the
  Excel C API - http://xlw.sourceforge.net/
@@ -375,7 +375,7 @@ int XlfOper::ConvertToString(char *& s) const throw()
 
   if (lpxloper_->xltype & xltypeStr)
   {
-    size_t n = lpxloper_->val.str[0];
+    size_t n = (unsigned char)lpxloper_->val.str[0];
     s = XlfExcel::Instance().GetMemory(n + 1);
     memcpy(s, lpxloper_->val.str + 1, n);
     s[n] = 0;
